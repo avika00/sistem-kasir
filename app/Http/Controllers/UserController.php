@@ -35,7 +35,7 @@ class UserController extends Controller
     {
         User::where('id', $id)
             ->where('id', $id)
-                ->upate([
+                ->update([
                     'name'     => $request->name,
                     'email'    => $request->email,
                     'password' => Hash::make($request->password),

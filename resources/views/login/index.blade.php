@@ -41,10 +41,16 @@
                                 <form class="mt-5 mb-5 login-input" method="post">
                                     @csrf
                                     <div class="form-group">
-                                        <input type="email" name="email" class="form-control" placeholder="Email" autofocus>
+                                        <input type="email" name="email" class="form-control" 
+                                        @error('email') is-invalid @enderror id="email" placeholder="Email" autofocus required value="{{ old ('email') }}">
+                                        @error('email')
+                                            <div class="invalid-feedback">
+                                                {{$message}}
+                                            </div>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Password">
+                                        <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
                                     </div>
                                     <button class="btn login-form__btn submit w-100">Sign In</button>
                                 </form>

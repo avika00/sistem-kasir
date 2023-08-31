@@ -12,7 +12,7 @@ class HomeController extends Controller
             'title' => 'Home Page'
         );
 
-        // return view('index',$data);
-        return view('home',$data);
+        // return view('login',$data);
+        return view('home', $data);
     }
 }

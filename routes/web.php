@@ -24,6 +24,7 @@ use App\Http\Controllers\UserController;
 // });
 
 Route::get('/', [HomeController::class, 'index']);
+Route::post('/login', [LoginController::class, 'authenticate']);
 Route::group(['middleware' => ['auth', 'checkaRole:admin']], function(){
     
     //CRUD Data User

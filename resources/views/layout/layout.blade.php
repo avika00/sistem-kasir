@@ -124,10 +124,8 @@
         
                     <li class="nav-label">UI Components</li>
 
-                    <!-- @if (Auth::user()->role == 'admin') -->
-
-                    <!-- <li>
-                        <a href="#" aria-expanded="false">
+                    <li>
+                        <a href="/setdiskon" aria-expanded="false">
                             <i class="icon-speedometer menu-icon"></i><span class="nav-text">Setting Diskon</span>
                         </a>
                     </li>
@@ -145,18 +143,14 @@
                         <a href="/laporan" aria-expanded="false">
                             <i class="icon-speedometer menu-icon"></i><span class="nav-text">Data Transaksi</span>
                         </a>
-                    </li> -->
+                    </li>
 
-                    <!-- @endif
-
-                    @if (Auth::user()->role == 'Kasir') -->
 
                     <li>
                         <a href="/transaksi" aria-expanded="false">
                             <i class="icon-speedometer menu-icon"></i><span class="nav-text">Data Laporan</span>
                         </a>
                     </li>
-                    <!-- @endif -->
                 </ul>
             </div>
         </div>
