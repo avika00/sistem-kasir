@@ -49,5 +49,4 @@
             </div>
             <!-- #/ container -->
         </div>
-    
 @endsection
