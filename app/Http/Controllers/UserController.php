@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use illuminate\Http\Request;
-use app\Models\User;
+use App\Models\User;
 use illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
     public function index()
     {
+    //    dd('test');
         $data = array(
             'title' => 'Data User',
             'data_user' => User::all(),
@@ -28,7 +29,7 @@ class UserController extends Controller
             'role'     => $request->role,
         ]);
 
-        return redirest('/user')->with('success', 'Data Berhasil Disimpan');
+        return redirect('/user')->with('success', 'Data Berhasil Disimpan');
     }
 
     public function update(Request $request, $id)
@@ -42,13 +43,13 @@ class UserController extends Controller
                     'role'     => $request->role,
         ]);
 
-        return redirest('/user')->with('success', 'Data Berhasil Diubah');
+        return redircst('/user')->with('success', 'Data Berhasil Diubah');
     }
 
     public function destroy($id)
     {
         $user=User::where('id', $id)->delete();
-        return redirest('/user')->with('success', 'Data Berhasil Dihapus');
+        return redirect('/user')->with('success', 'Data Berhasil Dihapus');
     }
 
 }

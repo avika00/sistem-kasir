@@ -12,7 +12,8 @@ class HomeController extends Controller
             'title' => 'Home Page'
         );
 
-        // return view('login',$data);
+        // return view('index', $data);
         return view('home', $data);
+        // return view('admin.master.user.list',$data);
     }
 }
