@@ -52,7 +52,7 @@
                                         <td>{{ $row->role }}</td>
                                         <td>
                                             <a href="#modalEdit" data-toggle="modal" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i>Edit</a>
-                                            <a href="modalHapus" data-toggle="modal" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i>Hapus</a>
+                                            <a href="#modalHapus" data-toggle="modal" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i>Hapus</a>
                                         </td>
                                     </tr>
                                     @endforeach
@@ -73,7 +73,7 @@
                 <h5 class="modal-title">Create Data User</h5>
                 <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
             </div>
-            <form method="POST" $url = route('user.store');;>
+            <form method="POST" action="/user/store">
             @csrf
             <div class="modal-body">
                 <div class="form-group">
@@ -133,7 +133,7 @@
                     <label>Role</label>
                     <select class="form-control" name="role" required>
                         <option <?php if($d['role']=="admin") echo "selected"; ?> value="admin">Admin</option>
-                        <option <?php if($d['role']=="admin") echo "selected"; ?> value="kasir">Kasir</option>
+                        <option <?php if($d['role']=="kasir") echo "selected"; ?> value="kasir">Kasir</option>
                     </select>
                 </div>
             </div>
@@ -155,7 +155,7 @@
                 <h5 class="modal-title">Hapus Data User</h5>
                 <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
             </div>
-            <form method="GET" action="/user/destroy/{{ $d->id }}">
+            <form method="POST" action="/user/destroy/{{ $d->id }}">
             @csrf
             <div class="modal-body">
                 <div class="form-group">
@@ -164,7 +164,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i>Close</button>
-                <button type="submit" class="btn btn-dangaer"><i class="fa fa-trash"></i>Hapus</button>
+                <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i>Hapus</button>
             </div>
             </form>
         </div>

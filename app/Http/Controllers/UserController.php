@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use illuminate\Http\Request;
-use App\Models\User;
-use illuminate\Support\Facades\Hash;
+use Illuminate\Http\Request;
+use app\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
