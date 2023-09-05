@@ -51,8 +51,15 @@
                                         <td>{{ $row->email }}</td>
                                         <td>{{ $row->role }}</td>
                                         <td>
-                                            <a href="#modalEdit" data-toggle="modal" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i>Edit</a>
-                                            <a href="#modalHapus" data-toggle="modal" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i>Hapus</a>
+
+                                            @foreach ($data_user as $d)
+                                            @endforeach
+                                            <a href="#modalEdit{{ $d->id }}" data-toggle="modal" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i>Edit</a>
+                                        
+                                            @foreach ($data_user as $c)
+                                            @endforeach
+                                            <a href="#modalHapus{{ $c->id }}" data-toggle="modal" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i>Hapus</a>
+                                            
                                         </td>
                                     </tr>
                                     @endforeach
@@ -110,7 +117,7 @@
 <div class="modal fade" id="modalEdit{{ $d->id }}" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-             <div class="modal-header">
+            <div class="modal-header">
                 <h5 class="modal-title">Edit Data User</h5>
                 <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
             </div>

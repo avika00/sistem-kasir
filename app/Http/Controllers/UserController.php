@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use app\Models\User;
 use Illuminate\Support\Facades\Hash;
+use app\Http\Controllers\redirect;
 
 class UserController extends Controller
 {
@@ -43,7 +44,7 @@ class UserController extends Controller
                     'role'     => $request->role,
         ]);
 
-        return redircst('/user')->with('success', 'Data Berhasil Diubah');
+        return redirect('/user')->with('success', 'Data Berhasil Diubah');
     }
 
     public function destroy($id)
