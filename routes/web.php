@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LoginController;
 
 // Route::get('/', function () {
 //     return Inertia::render('Welcome', [
@@ -23,12 +24,14 @@ use App\Http\Controllers\UserController;
 //     })->name('dashboard');
 // });
 
-Route::get('/', [HomeController::class, 'index']);
-Route::group(['middleware' => ['auth', 'checkaRole:admin']], function(){
+
+Route::POST('/login', [LoginController::class, 'authenticate']);
+Route::group(['middleware' => ['auth']], function(){
     
     //CRUD Data User
-    Route::get('/user', [UserController::class, 'index']);
-    Route::post('/use/store', [UserController::class, 'store']);
-    Route::post('/user/update/{id}', [UserController::class, 'update']);
-    Route::get('/user/destroy/{id}', [UserController::class, 'destroy']);
+    Route::GET('/', [HomeController::class, 'index']);
+    Route::GET('/user', [UserController::class, 'index']);
+    Route::POST('/user/store', [UserController::class, 'store']);
+    Route::POST('/user/update/{id}', [UserController::class, 'update']);
+    Route::POST('/user/destroy/{id}', [UserController::class, 'destroy']);
 });

@@ -19,7 +19,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="d-flex align-items-center">
-                            <h4 class="card-title">{{ $title }}</h4>
+                            <h4 class="card-title">Data Berita</h4>
                             <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#modalCreate">
                                 <i class="fa fa-plus"></i>
                                 Tambah Data
@@ -51,8 +51,15 @@
                                         <td>{{ $row->email }}</td>
                                         <td>{{ $row->role }}</td>
                                         <td>
-                                            <a href="#modalEdit" data-toggle="modal" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i>Edit</a>
-                                            <a href="modalHapus" data-toggle="modal" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i>Hapus</a>
+
+                                            @foreach ($data_user as $d)
+                                            @endforeach
+                                            <a href="#modalEdit{{ $d->id }}" data-toggle="modal" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i>Edit</a>
+                                        
+                                            @foreach ($data_user as $c)
+                                            @endforeach
+                                            <a href="#modalHapus{{ $c->id }}" data-toggle="modal" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i>Hapus</a>
+                                            
                                         </td>
                                     </tr>
                                     @endforeach
@@ -110,7 +117,7 @@
 <div class="modal fade" id="modalEdit{{ $d->id }}" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-             <div class="modal-header">
+            <div class="modal-header">
                 <h5 class="modal-title">Edit Data User</h5>
                 <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
             </div>
@@ -133,7 +140,7 @@
                     <label>Role</label>
                     <select class="form-control" name="role" required>
                         <option <?php if($d['role']=="admin") echo "selected"; ?> value="admin">Admin</option>
-                        <option <?php if($d['role']=="admin") echo "selected"; ?> value="kasir">Kasir</option>
+                        <option <?php if($d['role']=="kasir") echo "selected"; ?> value="kasir">Kasir</option>
                     </select>
                 </div>
             </div>
@@ -155,7 +162,7 @@
                 <h5 class="modal-title">Hapus Data User</h5>
                 <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
             </div>
-            <form method="GET" action="/user/destroy/{{ $d->id }}">
+            <form method="POST" action="/user/destroy/{{ $d->id }}">
             @csrf
             <div class="modal-body">
                 <div class="form-group">
@@ -164,7 +171,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i>Close</button>
-                <button type="submit" class="btn btn-dangaer"><i class="fa fa-trash"></i>Hapus</button>
+                <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i>Hapus</button>
             </div>
             </form>
         </div>
