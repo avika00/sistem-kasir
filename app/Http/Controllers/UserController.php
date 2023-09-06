@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use app\Models\User;
+use App\Models\User;
 use Illuminate\Support\Facades\Hash;
-use app\Http\Controllers\redirect;
+use App\Http\Controllers\redirect;
 
 class UserController extends Controller
 {

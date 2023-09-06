@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\JenisBarangController;
 
 // Route::get('/', function () {
 //     return Inertia::render('Welcome', [
@@ -33,5 +34,13 @@ Route::group(['middleware' => ['auth']], function(){
     Route::GET('/user', [UserController::class, 'index']);
     Route::POST('/user/store', [UserController::class, 'store']);
     Route::POST('/user/update/{id}', [UserController::class, 'update']);
-    Route::POST('/user/destroy/{id}', [UserController::class, 'destroy']);
+    Route::GET('/user/destroy/{id}', [UserController::class, 'destroy']);
+
+    //CRUD Data Jenis Barang
+    Route::GET('/', [HomeController::class, 'index']);
+    Route::GET('/jenisbarang', [JenisBarangController::class, 'index']);
+    Route::POST('/jenisbarang/store', [JenisBarangController::class, 'store']);
+    Route::POST('/jenisbarang/update/{id}', [JenisBarangController::class, 'update']);
+    Route::GET('/jenisbarang/destroy/{id}', [JenisBarangController::class, 'destroy']);
+
 });
