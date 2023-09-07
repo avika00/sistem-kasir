@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\JenisBarangController;
+use App\Http\Controllers\BarangController;
 
 // Route::get('/', function () {
 //     return Inertia::render('Welcome', [
@@ -42,5 +43,13 @@ Route::group(['middleware' => ['auth']], function(){
     Route::POST('/jenisbarang/store', [JenisBarangController::class, 'store']);
     Route::POST('/jenisbarang/update/{id}', [JenisBarangController::class, 'update']);
     Route::GET('/jenisbarang/destroy/{id}', [JenisBarangController::class, 'destroy']);
+
+    //CRUD Data Barang
+    Route::GET('/', [HomeController::class, 'index']);
+    Route::GET('/barang', [BarangController::class, 'index']);
+    Route::POST('/barang/store', [BarangController::class, 'store']);
+    Route::POST('/barang/update/{id}', [BarangController::class, 'update']);
+    Route::GET('/barang/destroy/{id}', [BarangController::class, 'destroy']);
+
 
 });
