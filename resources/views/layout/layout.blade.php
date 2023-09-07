@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title><{{ $title }}</title>
+    <title>{{ $title }}</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon.png">
     <!-- Custom Stylesheet -->
@@ -124,10 +124,8 @@
         
                     <li class="nav-label">UI Components</li>
 
-                    @if (Auth::user()->role == 'admin')
-
                     <li>
-                        <a href="#" aria-expanded="false">
+                        <a href="/setdiskon" aria-expanded="false">
                             <i class="icon-speedometer menu-icon"></i><span class="nav-text">Setting Diskon</span>
                         </a>
                     </li>
@@ -143,12 +141,14 @@
                     </li>
                     <li>
                         <a href="/laporan" aria-expanded="false">
-                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Data Transaksi</span>
+                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Data Laporan</span>
                         </a>
                     </li>
+
+
                     <li>
                         <a href="/transaksi" aria-expanded="false">
-                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Data Laporan</span>
+                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Data Transaksi</span>
                         </a>
                     </li>
                 </ul>
