@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html class="h-100" lang="en">
 
@@ -39,12 +38,19 @@
                             <div class="card-body pt-5">
                                 <a class="text-center" href="index.html"> <h4>Silahkan Login</h4></a>
         
-                                <form class="mt-5 mb-5 login-input">
+                                <form class="mt-5 mb-5 login-input" method="POST" action ="/home/$data">
+                                    @csrf
                                     <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Email">
+                                        <input type="email" name="email" class="form-control" 
+                                        @error('email') is-invalid @enderror id="email" placeholder="Email" autofocus required value="{{ old ('email') }}">
+                                        @error('email')
+                                            <div class="invalid-feedback">
+                                                {{$message}}
+                                            </div>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Password">
+                                        <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
                                     </div>
                                     <button class="btn login-form__btn submit w-100">Sign In</button>
                                 </form>
@@ -67,8 +73,3 @@
     <script src="/assets/js/styleSwitcher.js"></script>
 </body>
 </html>
-
-
-
-
-
