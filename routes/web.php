@@ -6,6 +6,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\JenisBarangController;
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\DiskonController;
+
 
 // Route::get('/', function () {
 //     return Inertia::render('Welcome', [
@@ -51,5 +53,8 @@ Route::group(['middleware' => ['auth']], function(){
     Route::POST('/barang/update/{id}', [BarangController::class, 'update']);
     Route::GET('/barang/destroy/{id}', [BarangController::class, 'destroy']);
 
+    //Setting Diskon
+    Route::GET('/setdiskon', [DiskonController::class, 'index']);
+    Route::POST('/setdiskon/update/{id}', [DiskonController::class, 'update']);
 
 });

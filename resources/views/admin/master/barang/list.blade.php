@@ -142,7 +142,7 @@
                 <div class="input-group mb-3">
                     <div class="input-group-prepend"><span class="input-group-text">Rp</span>
                     </div>
-                    <input type="numbet"name="harga" value="{{ $d->harga}}" class="form-control" placeholder="Harga..." required>
+                    <input type="number"name="harga" value="{{ $d->harga}}" class="form-control" placeholder="Harga..." required>
                 </div>
                 <div class="input-group mb-3">
                     <input type="number" name="stok" value="{{ $d->stok}}" placeholder="Stok..." class="form-control" required>
