@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\JenisBarangController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\DiskonController;
+use App\Http\Controllers\TransaksiController;
 
 
 // Route::get('/', function () {
@@ -56,5 +57,13 @@ Route::group(['middleware' => ['auth']], function(){
     //Setting Diskon
     Route::GET('/setdiskon', [DiskonController::class, 'index']);
     Route::POST('/setdiskon/update/{id}', [DiskonController::class, 'update']);
+
+    //Setting Profile
+    Route::GET('/profile', [UserController::class, 'profile']);
+    Route::POST('/profile/updateprofile/{id}', [UserController::class, 'updateprofile']);
+
+    //Data Transaksi
+    Route::GET('/transaksi', [TransaksiController::class, 'index']);
+    Route::GET('/transaksi/create', [TransaksiController::class, 'create']);
 
 });
