@@ -1,4 +1,4 @@
-@extends('layout.layout')
+@extends('after.after')
 @section('content')
 
         <div class="content-body">
