@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+// use Illuminate\Http\RedirectResponse;
 
 class LoginController extends Controller
 {
     public function index()
     {
-        dd(session()->all());
-        return view('index', [
+        // dd(session()->all());
+        return view('login.index', [
             'title' => 'Login',
             'active' => 'login'
         ]);
@@ -24,12 +25,15 @@ class LoginController extends Controller
         ]);
 
         $credentials= ['email'=>$request->email, 'password'=>$request->password];
-
+        
         if(Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-            return redirect()->intended('home');
+            // return redirect()->intended()->route('dashboard');
+            // return redirect()->route('/dashboard');
+            return redirect('/dashboard/$data')->with('success', 'Login Success');
+
         }
 
-        dd('berhasil login');
+        return back()->with('loginError', 'Login failed!');
+        // dd('berhasil login');
     }
 }

@@ -1,4 +1,4 @@
-@extends('layout.layout')
+@extends('after.after')
 @section('content')
 
 <div class="content-body">
@@ -123,7 +123,7 @@
                 <h5 class="modal-title">Hapus {{ $title }}</h5>
                 <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
             </div>
-            <form method="GET" action="/jenisbarang/destroy/{{ $d->id }}">
+            <form method="GET" action="/jenisbarang/destroy/{{ $c->id }}">
             @csrf
             <div class="modal-body">
                 <div class="form-group">

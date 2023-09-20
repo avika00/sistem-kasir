@@ -82,7 +82,7 @@
                     </div>
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save Changes</button>
-                        <a href="/trasaksi" class="btn btn-danger"><i class="fa fa-undo"></i> Save Changes</a>
+                        <a href="/trasaksi" class="btn btn-danger"><i class="fa fa-undo"></i> Cancel</a>
                     </div>
                     </form>
                 </div>
