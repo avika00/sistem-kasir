@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Home Page</title>
+    <title>{{ $title }}</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon.png">
     <!-- Custom Stylesheet -->
@@ -94,7 +94,8 @@
                                         <li>
                                             <a href="/profile"><i class="icon-user"></i> <span>Profile</span></a>
                                         </li>
-                                        <li><a href="/login"><i class="icon-key"></i> <span>Login</span></a></li>
+                                        <li><a href="{{ route('login'
+                                ) }}"><i class="icon-key"></i> <span>Logout</span></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -123,7 +124,7 @@
         
                     <li class="nav-label">UI Components</li>
 
-                    <!-- <li>
+                    <li>
                         <a href="/setdiskon" aria-expanded="false">
                             <i class="icon-speedometer menu-icon"></i><span class="nav-text">Setting Diskon</span>
                         </a>
@@ -149,7 +150,7 @@
                         <a href="/transaksi" aria-expanded="false">
                             <i class="icon-speedometer menu-icon"></i><span class="nav-text">Data Transaksi</span>
                         </a>
-                    </li> -->
+                    </li>
                 </ul>
             </div>
         </div>
