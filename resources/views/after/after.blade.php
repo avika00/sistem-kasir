@@ -94,7 +94,8 @@
                                         <li>
                                             <a href="/profile"><i class="icon-user"></i> <span>Profile</span></a>
                                         </li>
-                                        <li><a href="page-login.html"><i class="icon-key"></i> <span>Logout</span></a></li>
+                                        <li><a href="{{ route('login'
+                                ) }}"><i class="icon-key"></i> <span>Logout</span></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -149,7 +150,7 @@
                         <a href="/transaksi" aria-expanded="false">
                             <i class="icon-speedometer menu-icon"></i><span class="nav-text">Data Transaksi</span>
                         </a>
-                    </li> -->
+                    </li>
                 </ul>
             </div>
         </div>

@@ -34,6 +34,10 @@ Route::GET('/', [HomeController::class, 'index']);
 
 Route::GET('/login', [LoginController::class, 'index'])->name('login');
 Route::POST('/login', [LoginController::class, 'authenticate']);
+Route::GET('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::GET('/register', [LoginController::class, 'register'])->name('register');
+Route::POST('/register-proses', [LoginController::class, 'register_proses'])->name('register-proses');
 
 Route::group(['middleware' => ['auth']], function(){
 
@@ -41,12 +45,8 @@ Route::group(['middleware' => ['auth']], function(){
     // Route::POST('/dashboard/{data}', 'DashboardController@postMethod')->name('dashboard.post');
 
     Route::GET('/dashboard/$data', [DashboardController::class, 'index'])->name('dashboard');
-    // Route::get('/dashboard/{data}', 'DashboardController@index')->name('dashboard');
 
-    
-    
-    //CRUD Data User
-    
+    //CRUD Data User    
     Route::GET('/user', [UserController::class, 'index']);
     Route::POST('/user/store', [UserController::class, 'store']);
     Route::POST('/user/update/{id}', [UserController::class, 'update']);

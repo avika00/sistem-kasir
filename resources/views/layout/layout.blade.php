@@ -95,7 +95,6 @@
                                             <a href="/profile"><i class="icon-user"></i> <span>Profile</span></a>
                                         </li>
                                         <li><a href="/login"><i class="icon-key"></i> <span>Login</span></a></li>
-                                        <li><a href="page-login.html"><i class="icon-key"></i> <span>Logout</span></a></li>
                                     </ul>
                                 </div>
                             </div>
